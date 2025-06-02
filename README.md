@@ -86,11 +86,9 @@ pip install flask netmiko
 
 <img width="949" alt="image" src="https://github.com/user-attachments/assets/6e173380-68d9-41ca-a665-789e748cd6b1" />
 
----
+<img width="964" alt="image" src="https://github.com/user-attachments/assets/635839a0-7bd5-40fb-8796-3429267f1af1" />
 
-## 📜 License
-
-This project is licensed under the MIT License.
+<img width="964" alt="image" src="https://github.com/user-attachments/assets/a18efeb1-9820-4940-a385-82c00af53e91" />
 
 ---
 
