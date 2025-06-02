@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NetFetch</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon1.png') }}">
+    <style>
+        body {
+            background-color:#e8e8e8;
+            color: #f1f1f1;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #504e91;
+        }
+	.name-tag {
+                 position: absolute;
+                 top: 20px;
+                 right: 20px;
+                 color: #504e91;
+                 font-size: 08px;         /* smaller font */
+                 font-family: 'Courier New', monospace; /* different font style */
+                 font-weight: normal;     /* optional: remove bold */
+                }
+
+	.logo-top-right {
+ 	   position: absolute;
+ 	   top: 10px;
+  	   left: 20px; /* adjust as needed */
+ 	   height: 50px; /* adjust size as needed */
+			}
+
+        .icon-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .icon-grid a {
+            text-decoration: none;
+            color: #121212;
+        }
+        .icon-card {
+            background-color: #c4c6cf;
+            border-radius: 10px;
+            padding: 20px;
+            width: 120px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        .icon-card:hover {
+            transform: scale(1.1);
+        }
+        .icon-card img {
+            width: 64px;
+            height: 64px;
+        }
+        .icon-label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+	<div class="name-tag">// Alok P. | UAPTDZ </div>
+	<img src="{{ url_for('static', filename='NetFetch_logo.png') }}" alt="NetFetch Logo" class="logo-top-right">
+	<h1>Select a Device Platform</h1>
+    <div class="icon-grid">
+        <a href="/cisco">
+            <div class="icon-card">
+                <img src="{{ url_for('static', filename='cisco.png') }}" alt="Cisco">
+                <div class="icon-label">Cisco</div>
+            </div>
+        </a>
+        <a href="/f5">
+            <div class="icon-card">
+                <img src="{{ url_for('static', filename='f5.png') }}" alt="F5">
+                <div class="icon-label">F5</div>
+            </div>
+        </a>
+        <a href="/fortinet">
+            <div class="icon-card">
+                <img src="{{ url_for('static', filename='fortinet.png') }}" alt="Fortinet">
+                <div class="icon-label">Fortinet</div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NetFetch:Cisco</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon1.png') }}">
+    <!-- <link rel="icon" type="image/png" href="https://me2.ihgmerlin.com/o/merlin-theme/images/favicon.ico"> -->
+    <style>
+
+.logo-top-left {
+           position: absolute;
+           top: 10px;
+           left: 20px; 
+           height: 25px;
+                        }
+
+        body {
+            background-color: #e8e8e8;
+            color: #f1f1f1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+	h1 {
+            color: #504e91;
+        }
+        h2 {
+                color: #cfcef0;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #00bcd4;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card {
+            background-color: #2e2e3e;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        pre {
+            background-color: #1b1b2b;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .error {
+            color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+<img src="{{ url_for('static', filename='NetFetch_logo.png') }}" alt="NetFetch Logo" class="logo-top-left">
+
+
+	<div style="position: absolute; top: 20px; right: 20px; display: flex; align-items: center; gap: 10px;">
+<a href="{{ url_for('home') }}">
+<button style="padding: 6px 12px; background-color: #00bcd4; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Home
+</button>
+</a>
+<div style="color: #504e91; font-size: 12px; font-family: 'Courier New', monospace;">
+        // Alok P. | UAPTDZ
+</div>
+</div>
+    <h1>::Cisco Device::</h1>
+    <form method="POST">
+        <input type="text" name="device_ip" placeholder="Enter Cisco Device IP" required>
+        <button type="submit">Poll Device</button>
+    </form>
+
+    {% if data %}
+        {% if data.error %}
+            <p class="error">Error: {{ data.error }}</p>
+        {% else %}
+            <div class="card">
+                <h2>Hostname</h2>
+                <pre>{{ data.hostname }}</pre>
+            </div>
+
+            <div class="card">
+                <h2>ARP Table</h2>
+                <pre>{{ data.arp }}</pre>
+            </div>
+
+            <div class="card">
+                <h2>CDP Neighbors</h2>
+                <pre>{{ data.cdp }}</pre>
+            </div>
+
+            <div class="card">
+                <h2>BGP Summary</h2>
+                <pre>{{ data.bgp }}</pre>
+            </div>
+		
+			<div class="card">
+                <h2>OSPF Neighbors</h2>
+                <pre>{{ data.ospf }}</pre>
+            </div>
+			
+			<div class="card">
+                <h2>OSPF Interface</h2>
+                <pre>{{ data.ospf2 }}</pre>
+            </div>
+
+	    <div class="card">
+                <h2>OSPF Neighbor Details</h2>
+                <pre>{{ data.ospf3 }}</pre>
+            </div>
+
+            <div class="card">
+                <h2>Interfaces Brief</h2>
+                <pre>{{ data.interfaces }}</pre>
+            </div>
+
+	    <div class="card">
+                <h2>Interface Description</h2>
+                <pre>{{ data.intdesc }}</pre>
+            </div>
+			
+			<div class="card">
+                <h2>Current IOS Version</h2>
+                <pre>{{ data.version }}</pre>
+            </div>
+			
+			<div class="card">
+                <h2>Reload Time</h2>
+                <pre>{{ data.reloadtime }}</pre>
+            </div>
+			
+			<div class="card">
+                <h2>Last Reload reason</h2>
+                <pre>{{ data.reloadreason }}</pre>
+            </div>
+			
+			<div class="card">
+                <h2>Device Uptime</h2>
+                <pre>{{ data.uptime }}</pre>
+            </div>
+			
+			<div class="card">
+                <h2>CPU History</h2>
+                <pre>{{ data.cpu }}</pre>
+            </div>
+			
+			<div class="card">
+                <h2>Memory Statistics</h2>
+                <pre>{{ data.memory }}</pre>
+            </div>
+			
+			<div class="card">
+                <h2>Show Power</h2>
+                <pre>{{ data.pdu }}</pre>
+            </div>
+			
+        {% endif %}
+    {% endif %}
+</body>
+</html>
