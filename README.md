@@ -18,17 +18,27 @@
 
 ```
 
-netfetch/
+netfetch-automation/
 │
-├── app.py                 # Main Flask application
-├── templates/             # Jinja2 HTML templates
-│   └── index.html         # Main interface
-├── static/                # Images, favicon, CSS
-│   └── NetFetch\_logo.png
-├── requirements.txt       # Required Python packages
-└── README.md              # Project overview
-
-````
+├── app.py
+├── nohup.out
+├── poll_fortinet.py
+├── polling.py
+├── __pycache__
+│   ├── poll_fortinet.cpython-38.pyc
+│   └── polling.cpython-38.pyc
+├── static
+│   ├── cisco.png
+│   ├── f5.png
+│   ├── favicon1.png
+│   ├── fortinet.png
+│   ├── NetFetch_logo.png
+│   ├── wget-log
+│   └── wget-log.1
+└── templates
+    ├── cisco.html
+    ├── fortinet.html
+    └── home.html
 
 ---
 
@@ -74,7 +84,7 @@ pip install flask netmiko
 
 ## 🖼️ Screenshot
 
-*(Add a screenshot here if you'd like)*
+<img width="949" alt="image" src="https://github.com/user-attachments/assets/6e173380-68d9-41ca-a665-789e748cd6b1" />
 
 ---
 
